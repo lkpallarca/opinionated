@@ -1,0 +1,10 @@
+@import '../base/variables';
+@import '../base/mixins';
+
+.edit-page {
+  h1 {
+    color: $my-white;
+    font-size: 40px;
+    text-align: center;
+  }
+}

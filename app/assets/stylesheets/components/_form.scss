@@ -1,0 +1,90 @@
+@import '../base/variables';
+@import '../base/mixins';
+
+#error_message {
+  @include perimeter(auto, fit-content);
+  margin: 3vh auto;
+
+  h2 {
+    color: red;
+    font-size: 18px;
+  }
+
+  li {
+    color: $my-white;
+    margin: 15px 0;
+  }
+}
+
+.form-field {
+  @include perimeter(auto, fit-content);
+  background-color: $my-bg-2;
+  padding: 20px;
+  border-radius: 20px;
+  margin: 5vh auto 3vh auto;
+
+  div {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  label {
+    color: $my-brown;
+    font-size: 30px;
+    margin-bottom: 5px;
+  }
+
+  #opinion_category, #opinion_rating {
+    @include perimeter(40px, max-content);
+    @include scrollbar;
+    cursor: pointer;
+    font-size: 18px;
+    background-color: $my-white;
+    border-radius: 10px;
+
+    &:focus-visible {
+      outline: none;
+    }
+  }
+
+  #opinion_subject, #opinion_body, #opinion_image_url {
+    border-radius: 10px;
+    resize: none;
+    background-color: $my-white;
+
+    &:focus-visible {
+      outline: none;
+    }
+  }
+
+  #opinion_subject, #opinion_image_url {
+    @include perimeter(25px, 500px);
+    font-size: 20px;
+    padding: 5px 15px;
+  }
+
+  #opinion_body {
+    @include perimeter(250px, 500px);
+    @include scrollbar;
+    font-size: 20px;
+    padding: 15px;
+  }
+
+  .form-submit {
+    input {
+      @include perimeter(50px, 200px);
+      cursor: pointer;
+      border-radius: 10px;
+      border: none;
+      background-color: $my-bg;
+      color: $my-white;
+      margin: auto;
+      font-size: 20px;
+
+      &:hover {
+        color: $my-brown;
+      }
+    }
+  }
+}

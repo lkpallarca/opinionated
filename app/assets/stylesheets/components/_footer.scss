@@ -1,0 +1,23 @@
+@import '../base/variables';
+@import '../base/mixins';
+
+.footer {
+  @include perimeter(auto, fit-content);
+  padding: 5px 20px 5px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  background-color: hsl(0, 0%, 10%);
+  color: hsl(0, 0%, 60%);
+
+  p {
+    margin-right: 10px;
+  }
+
+  span {
+    img {
+      @include perimeter(20px, 20px);
+    }
+  }
+}

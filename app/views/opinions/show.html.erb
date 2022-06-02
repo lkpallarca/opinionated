@@ -1,0 +1,18 @@
+<section class="show-page">
+  <%= render 'home_trigger', opinions_path: opinions_path %>
+  
+  <div class="category"><%= @opinion.category %></div>
+  <div class="image" style="background-image: url(<%= @opinion.image_url %>)"></div>
+  <div class="subject"><%= @opinion.subject %></div>
+  <div class="rating"><%= '⭐' * @opinion.rating.to_i %></div>
+  <div class="body"><%= @opinion.body %></div>
+
+  <div class="edit-label">Edit/Delete this Opinion about <span><%= @opinion.subject %></span>?</div>
+  <div class="modify-trigger">
+    <%= link_to(edit_opinion_path(@opinion)) do %>
+      <button>Edit</button>
+    <% end %>
+    <%= button_to "Delete", opinion_path(@opinion), method: :delete %>
+  </div>
+  <%= render 'footer' %>
+</section>

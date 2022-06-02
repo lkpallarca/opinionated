@@ -1,0 +1,25 @@
+@import "./variables";
+
+@mixin perimeter($h, $w) {
+  height: $h;
+  width: $w;
+}
+
+@mixin scrollbar {
+  &::-webkit-scrollbar {
+    width: 0.4rem;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: hsl(225, 6%, 13%);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: hsl(0, 0%, 60%); 
+    border-radius: 0.5rem;
+
+    &:hover {
+      background: #555; 
+    }
+  }
+}

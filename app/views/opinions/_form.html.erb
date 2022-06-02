@@ -1,0 +1,44 @@
+<%= form_with model: opinion do |form| %>
+  <% if opinion.errors.any? %>
+    <div id="error_message">
+      <h2>Sorry, your Opinion was not created due to:</h2>
+      
+      <ul>
+        <% opinion.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <section class="form-field">
+    <div class="form-category">
+      <%= form.label :category %>
+      <%= form.select :category, options_for_select(Opinion.categories.map {|key, value| [key.titleize, Opinion.categories.key(value)]}, @opinion.category) %>
+    </div>
+
+    <div class="form-subject">
+      <%= form.label :subject %>
+      <%= form.text_area :subject %>
+    </div>
+
+    <div class="form-image">
+      <%= form.label :image_url %>
+      <%= form.url_field :image_url %>
+    </div>
+
+    <div class="form-body">
+      <%= form.label "Opinion" %>
+      <%= form.text_area :body %>
+    </div>
+
+    <div class="form-rating">
+      <%= form.label :rating %>
+      <%= form.select :rating, options_for_select(Opinion.ratings.map {|key, value| [key.titleize, Opinion.ratings.key(value)]}, @opinion.rating) %>
+    </div>
+
+    <div class="form-submit">
+      <%= form.submit "Opinionate!" %>
+    </div>
+  </section>
+<% end %>
