@@ -17,8 +17,6 @@ class Opinion < ApplicationRecord
     Others: "others" 
   }
 
-  enum action: ["New", "Edit"]
-
   enum rating: {'5 Stars': 5, '4 Stars': 4, '3 Stars': 3, '2 Stars': 2, '1 Star': 1}
 
   validates :subject, length: { minimum: 2 }, presence: true
